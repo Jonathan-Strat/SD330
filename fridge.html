@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Fridge-Strathausen</title>
+    <meta charset="UTF-8">
+    <link href="fridgestyle.css" rel="stylesheet"> </link>
+</head>
+
+<body onload="doStartClock();">
+    <div id="container">
+        <div id="offUI">
+            <p><button id="power" onclick="powerButton()">Turn ON</button></p>
+	    <p><button id="timeToggle" class="button" onclick="toggleTimeFormat()">Change Time Format</button></p>
+            <p id="timePar">00:00:00</p>
+        </div>
+        <br style='clear:right'>
+        <div id="screen">
+            <img id="pic" src="" width="100%" height="100%">
+        </div>
+
+        <div id="options">
+            <p><button class="button" onclick="temperature()">Display Temperature</button></p>
+            <p><button class="button" onclick="insideView()">Inside View</button></p>
+	    <p><button class="button" onclick="weather()">Weather Forecast</button></p>
+	    <p><button class="button" onclick="timer()">Start Timer</button></p>
+	    <p><button class="button" onclick="shoppingList()">Shopping List</button></p>
+            <p><button class="button" onclick="television()">TV Screen</button></p>
+            <p><button class="button" onclick="browser()">Open Browser</button></p>
+	    <p><button class="button" onclick="music()">Music Player</button></p>
+	    <p><button class="button" onclick="decreaseTemp()">Decrease Temperature</button></p>
+	    <p><button class="button" onclick="increaseTemp()">Increase Temperature</button></p>
+        </div>
+        <br style='clear:left'>
+    </div>
+    <footer>
+        <hr>
+        <small>&copy Jonathan Strathausen, 10-16-2024</small>
+    </footer>
+
+    <script>
+        var picture = document.getElementById("pic");
+        var temp = 0;
+        var isMilitaryTime = true;
+
+        function doStartClock() {
+            setInterval(doClockTick, 1000);
+        }
+
+        function doClockTick() {
+            var currentDate = new Date();
+            var hours = currentDate.getHours();
+            var mins = String(currentDate.getMinutes()).padStart(2, '0');
+            var secs = String(currentDate.getSeconds()).padStart(2, '0');
+            var timeString;
+
+            if (isMilitaryTime) {
+                timeString = String(hours).padStart(2, '0') + ":" + mins + ":" + secs;
+            } else {
+                var period = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12 || 12; 
+                timeString = String(hours).padStart(2, '0') + ":" + mins + ":" + secs + " " + period;
+            }
+
+            var outputElement = document.getElementById("timePar");
+            outputElement.textContent = timeString;
+        }
+
+        function powerButton() {
+            var button = document.getElementById("power");
+            var buttons = document.getElementsByClassName("button");
+
+            if (button.textContent == "Turn ON") {
+                button.textContent = "Turn OFF";
+                button.style.backgroundColor = "red";
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].style.display = 'block';
+                }
+                document.getElementById("screen").innerHTML = '<img id="pic" src="https://i.pinimg.com/originals/7b/2a/86/7b2a86993b5bb7eafa019815af8a2d0c.png" width="100%" height="100%">';
+            } else {
+                button.textContent = "Turn ON";
+                button.style.backgroundColor = "green";
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].style.display = 'none';
+                }
+                document.getElementById("screen").innerHTML = '<img id="pic" src="" width="100%" height="100%">';
+            }
+        }
+
+        function toggleTimeFormat() {
+            isMilitaryTime = !isMilitaryTime;
+        }
+
+        var currentTemp = 0; 
+        var isTempSet = false; 
+        var isFahrenheit = true; 
+
+        function temperature() {
+            let htmlString = '<h1> Temperature </h1>';
+
+            if (!isTempSet) {
+                currentTemp = Math.floor(Math.random() * (40 - 33 + 1)) + 33;
+                isTempSet = true; 
+	    }
+
+            if (isFahrenheit) {
+                let celsius = (currentTemp - 32) * (5 / 9);
+                htmlString += '<h2>' + celsius.toFixed(2) + ' C</h2>';
+		currentTemp = celsius;
+            } 
+	    else {
+                let fahrenheit = (currentTemp * (9 / 5)) + 32;
+                htmlString += '<h2>' + fahrenheit.toFixed(2) + ' F</h2>';
+		currentTemp = fahrenheit;
+            }
+
+            isFahrenheit = !isFahrenheit;
+
+            document.getElementById('screen').innerHTML = htmlString;
+        }
+
+        function insideView() {
+            document.getElementById("screen").innerHTML = '<img id="pic" src="https://simplify101.com/wp-content/uploads/2012/08/inside-refrigerator.jpg" width="100%" height="100%">';
+        }
+
+        function television() {
+            document.getElementById("screen").innerHTML = '<img id="pic" src="https://variety.com/wp-content/uploads/2022/09/Roku-OS-11.5-The-Buzz-Home-Screen.png" width="100%" height="100%">';
+	    const sound = "https://www.soundjay.com/button/sounds/button-5.mp3";
+	    const audio = new Audio(sound);
+	    audio.play();
+        }
+
+        function browser() {
+            document.getElementById("screen").innerHTML = '<img id="pic" src="https://nira.com/wp-content/uploads/2020/01/Default_Chrome_Homepage-1024x718.png" width="100%" height="100%">';
+        }
+
+	function weather() {
+            document.getElementById("screen").innerHTML = '<img id="pic" src="https://play-lh.googleusercontent.com/pCQw51XRP4UPr-FCYDjvNnEpFa0HDGJjjLDldN3rmw4KkwhqPu0PZXE8EopmAxzH9mQ" width="100%" height="100%">';
+        }
+
+	function music() {
+            document.getElementById("screen").innerHTML = '<img id="pic" src="https://play-lh.googleusercontent.com/kDXJ6XA2Cm47lzDCvvu6HNCu0PWmTwZKiY0ldCWrCgXGT3Ms-lbP_WN1v5vknspnLT15=w526-h296-rw" width="100%" height="100%">';
+        }
+
+	function shoppingList() {
+            document.getElementById("screen").innerHTML = '<img id="pic" src="https://garlicdelight.com/wp-content/uploads/20210319-reverse-shopping-list-768x768.png" width="100%" height="100%">';
+        }
+	
+	function timer() {
+            document.getElementById("screen").innerHTML = '<img id="pic" src="https://www.cnet.com/a/img/resize/324488b838e175083e6ee2cdf5741d5fccd7106d/hub/2022/10/18/31d3da21-123a-4908-885a-e26c5df60fb9/clock-time-countdown-0954.jpg?auto=webp&fit=crop&height=900&width=1200" width="100%" height="100%">';
+        }
+
+	function increaseTemp() {
+	    currentTemp += 1;
+	}
+
+	function decreaseTemp() {
+	    currentTemp -= 1;
+	}
+    </script>
+</body>
+
+</html>

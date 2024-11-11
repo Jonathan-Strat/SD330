@@ -1,0 +1,66 @@
+﻿body {
+    font: 18px 'Montserrat';
+}
+
+div#container {
+    background-color: black;
+    color: white;
+    border: 5px solid grey;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 630px;
+}
+
+div#offUI p {
+    float: right;
+    width: 33%;
+    text-align: center;
+}
+
+#timePar {
+    font: 30px 'Montserrat', sans-serif;
+    text-align: left;
+}
+
+div#screen {
+    text-align: center;
+    height: 400px;
+}
+
+div#options {
+    text-align: center;
+}
+
+    div#options p {
+        display: inline-block;
+        width: auto;
+        margin: 15px;
+        vertical-align: middle;
+    }
+
+.button {
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    display: none;
+}
+
+button#power {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: green;
+}
+
+button#timeToggle {
+    margin-top: 10px;
+}
+
+footer {
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+}
