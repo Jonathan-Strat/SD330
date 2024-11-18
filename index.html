@@ -1,1 +1,60 @@
-Hello World from Jonathan Strathausen!
+<!DOCTYPE HTML>
+<html>
+	<head> 
+		<title> Index </title>
+		<meta charset="UTF-8">
+	<style>
+		body {
+			font: 25px 'Montserrat';
+			text-align: center;
+			background-image: url('https://t3.ftcdn.net/jpg/04/12/82/16/360_F_412821610_95RpjzPXCE2LiWGVShIUCGJSktkJQh6P.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		
+		div {
+			border: 5px solid black;
+			margin-right: 30%;
+			margin-left: 30%;
+		}
+	</style>
+	</head>	
+
+	<body onload="Filelist()">
+
+	<h1> Jonathan's GitHub Files </h1>
+	<img src="https://media.licdn.com/dms/image/v2/D4E03AQFr3tWtrQUHqg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1727963445926?e=2147483647&v=beta&t=yQJwZQljd86Dp-UDI_siUNvWvFoZg_YYNw1n5OyBEQY" width="100" height="100" alt="Photo of style">
+	<h3> All of my SD330 repository files can be seen here: </h3>
+	<div>
+		<p id="files"> 
+	</div>
+	<footer style="margin-right: 30%; margin-left: 30%;">
+		<br>
+		<hr>
+		<small> &copy Jonathan Strathausen, 11-18-2024 </small>
+	</footer>
+	<script>
+		function Filelist(){
+			
+		var htmlString = "";
+
+		(async () => {
+			const response = await fetch("https://api.github.com/repos/Jonathan-Strat/SD330/contents/");
+			const data = await response.json();
+    	
+    		for (let file of data) {
+				fname = file.name;           
+				fpath = "https://Jonathan-Strat.github.io/SD330/" + fname;  
+				
+				htmlString += "<a href='" + fpath + "'> " + fname + " </a>";
+				htmlString += "<br>";
+				htmlString += "<br>";
+			}
+		document.getElementById('files').innerHTML = htmlString;
+		})()
+	}
+	</script>
+	</body>
+</html>
+  
