@@ -1,0 +1,144 @@
+{
+  "parkingLots": [
+    {
+      "name": "Beck",
+      "map": "mapBeck.jpg",
+      "totalSpaces": 100,
+      "comments": "Close to many roads.",
+      "location": "Central Campus",
+      "lotType": "Commuter",
+      "security": "Medium",
+      "spaces": [
+        {
+          "spaceId": "01",
+          "type": "Student",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": null
+        },
+        {
+          "spaceId": "02",
+          "type": "Student",
+          "status": "Filled",
+          "filledDateTime": "2024-11-25, 08:15:00",
+          "reservedDateTime": null
+        },
+        {
+          "spaceId": "03",
+          "type": "Handicap",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": null
+        },
+        {
+          "spaceId": "04",
+          "type": "Student",
+          "status": "Reserved",
+          "filledDateTime": null,
+          "reservedDateTime": "2024-11-25, 10:00:00"
+        },
+        {
+          "spaceId": "05",
+          "type": "Student",
+          "status": "Filled",
+          "filledDateTime": "2024-11-25, 13:45:00",
+          "reservedDateTime": null
+        },
+        {
+          "spaceId": "06",
+          "type": "Handicap",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": null
+        },
+        {
+          "spaceId": "07",
+          "type": "Student",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": null
+        },
+        {
+          "spaceId": "08",
+          "type": "Handicap",
+          "status": "Filled",
+          "filledDateTime": "2024-11-25, 09:00:00",
+          "reservedDateTime": null
+        },
+        {
+          "spaceId": "09",
+          "type": "Special Access",
+          "status": "Reserved",
+          "filledDateTime": null,
+          "reservedDateTime": "2024-11-25, 11:30:00"
+        },
+        {
+          "spaceId": "10",
+          "type": "Student",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": null
+        },
+        {
+          "spaceId": "11",
+          "type": "Student",
+          "status": "Filled",
+          "filledDateTime": "2024-11-25, 14:00:00",
+          "reservedDateTime": null
+        },
+        {
+          "spaceId": "12",
+          "type": "Special Access",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": null
+        }
+      ]
+    },
+    {
+      "name": "Donnelly",
+      "map": "mapDonnelly.jpg",
+      "totalSpaces": 200,
+      "comments": "Close to the football field, widely used.",
+      "location": "West Campus",
+      "lotType": "Employee",
+      "security": "High"
+    },
+    {
+      "name": "Byrne",
+      "map": "mapByrne.jpg",
+      "totalSpaces": 25,
+      "comments": "Seldom used, behind student center.",
+      "location": "North Campus",
+      "lotType": "Employee",
+      "security": "Low"
+    },
+    {
+      "name": "MidRise",
+      "map": "mapMidRise.jpg",
+      "totalSpaces": 75,
+      "comments": "Close to student center and river.",
+      "location": "North Campus",
+      "lotType": "Employee",
+      "security": "Medium"
+    },
+    {
+      "name": "McCann",
+      "map": "mapMcCann.jpg",
+      "totalSpaces": 150,
+      "comments": "Useful for athletics.",
+      "location": "Northwest Campus",
+      "lotType": "Employee/Commuter",
+      "security": "High"
+    },
+    {
+      "name": "Lower West",
+      "map": "mapLowerWest.jpg",
+      "totalSpaces": 50,
+      "comments": "Close to street on west side.",
+      "location": "Central Campus",
+      "lotType": "Student",
+      "security": "Low"
+    }
+  ]
+}
