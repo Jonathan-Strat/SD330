@@ -60,8 +60,7 @@ async function loadSpaces() {
       			return;
     		}
 
-    		let htmlString = `<h2>Spaces for ${lot.name}</h2>`;
-    		htmlString += `<ul>`;
+    		let htmlString = `<ul>`;
     		lot.spaces.forEach(space => {
       			htmlString += `<li>
         			<b>Space ID:</b> ${space.spaceId} <br>
@@ -80,5 +79,3 @@ async function loadSpaces() {
     		document.body.innerHTML = "<p>Error loading spaces for the lot.</p>";
   	}
 }
-
-loadSpaces();
