@@ -80,3 +80,5 @@ async function loadSpaces() {
     		document.body.innerHTML = "<p>Error loading spaces for the lot.</p>";
   	}
 }
+
+loadSpaces();
