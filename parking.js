@@ -39,11 +39,6 @@ function getURLParameter(name) {
 async function loadSpaces() {
   	const lotId = getURLParameter('lot'); 
 
-  	if (!lotId) {
-   		document.body.innerHTML = "<p>Error: No lot specified in the URL.</p>";
-    		return;
-  	}
-
   	try {
     		const response = await fetch("https://jonathan-strat.github.io/SD330/parking.json");
     		const data = await response.json();
