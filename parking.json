@@ -1,6 +1,6 @@
 {
-  "parkingLots": [
-    {
+  "parkingLots": {
+    "1": {
       "name": "Beck",
       "map": "mapBeck.jpg",
       "totalSpaces": 100,
@@ -95,7 +95,7 @@
         }
       ]
     },
-    {
+    "2": {
       "name": "Donnelly",
       "map": "mapDonnelly.jpg",
       "totalSpaces": 200,
@@ -104,7 +104,7 @@
       "lotType": "Employee",
       "security": "High"
     },
-    {
+    "3": {
       "name": "Byrne",
       "map": "mapByrne.jpg",
       "totalSpaces": 25,
@@ -113,7 +113,7 @@
       "lotType": "Employee",
       "security": "Low"
     },
-    {
+    "4": {
       "name": "MidRise",
       "map": "mapMidRise.jpg",
       "totalSpaces": 75,
@@ -122,7 +122,7 @@
       "lotType": "Employee",
       "security": "Medium"
     },
-    {
+    "5": {
       "name": "McCann",
       "map": "mapMcCann.jpg",
       "totalSpaces": 150,
@@ -131,7 +131,7 @@
       "lotType": "Employee/Commuter",
       "security": "High"
     },
-    {
+    "6": {
       "name": "Lower West",
       "map": "mapLowerWest.jpg",
       "totalSpaces": 50,
@@ -140,5 +140,5 @@
       "lotType": "Student",
       "security": "Low"
     }
-  ]
+  }
 }

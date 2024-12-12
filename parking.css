@@ -111,6 +111,17 @@ body {
 	height: auto;
 }
 
+.group {
+	float: left;
+	width: 30%;
+	margin: 1.5%;
+}
+.division {
+	border: 5px solid black;
+	padding: 15px;
+	height: 400px;
+}
+
 footer {
 	text-align: center;
 }
