@@ -135,6 +135,11 @@ body {
 	font size: 30px;
 }
 
+#lotSpaces {
+	color: white;
+	margins: 35%;
+}
+
 footer {
 	text-align: center;
 }
