@@ -129,6 +129,12 @@ body {
 	text-decoration: underline;
 }
 
+.spaces h1 {
+	color: white;
+	text-align: center;
+	font size: 30px;
+}
+
 footer {
 	text-align: center;
 }
