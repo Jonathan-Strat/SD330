@@ -45,16 +45,6 @@ async function loadSpaces() {
 
     		const lot = data.parkingLots[lotId];
 
-    		if (!lot) {
-      			document.body.innerHTML = `<p>Error: Lot ID "${lotId}" not found.</p>`;
-      			return;
-    		}
-
-    		if (!lot.spaces || lot.spaces.length === 0) {
-      			document.body.innerHTML = `<p>No spaces available for lot "${lot.name}".</p>`;
-      			return;
-    		}
-
     		let htmlString = `<ul>`;
     		lot.spaces.forEach(space => {
       			htmlString += `<li>

@@ -135,7 +135,7 @@ body {
 	font size: 30px;
 }
 
-#lotSpaces {
+.spaces div {
 	color: white;
 	margins: 35%;
 }
